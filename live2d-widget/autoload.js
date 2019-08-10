@@ -1,5 +1,5 @@
-//const live2d_path = "https://pyherman.github.io/live2d-widget/";
-const live2d_path = "/live2d-widget/";
+const live2d_path = "https://pyherman.github.io/live2d-widget/";
+//const live2d_path = "/live2d-widget/";
 
 $("<link>").attr({href: live2d_path + "waifu.css", rel: "stylesheet", type: "text/css"}).appendTo("head");
 //waifu.css的绝对路径
