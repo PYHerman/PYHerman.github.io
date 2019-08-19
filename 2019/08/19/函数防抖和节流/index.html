@@ -96,13 +96,22 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="练习没满两年半的狒狒">
-<meta property="og:url" content="http://yoursite.com/tags/ES6/index.html">
+  <meta name="description" content="函数防抖(debounce) 概念:在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时。  实现思路如下，将目标方法（动作）包装在setTimeout里面，然后这个方法是一个事件的回调函数，如果这个回调一直执行，那么这些动作就一直不执行。为什么不执行呢，我们搞了一个clearTimeout，这样setTimeout里的方法就不会执行！ 为什么要clearTimeout呢，我们就需要将">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数防抖和节流">
+<meta property="og:url" content="http://yoursite.com/2019/08/19/函数防抖和节流/index.html">
 <meta property="og:site_name" content="练习没满两年半的狒狒">
+<meta property="og:description" content="函数防抖(debounce) 概念:在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时。  实现思路如下，将目标方法（动作）包装在setTimeout里面，然后这个方法是一个事件的回调函数，如果这个回调一直执行，那么这些动作就一直不执行。为什么不执行呢，我们搞了一个clearTimeout，这样setTimeout里的方法就不会执行！ 为什么要clearTimeout呢，我们就需要将">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/函数防抖和节流/1.gif">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/函数防抖和节流/2.gif">
+<meta property="og:image" content="http://yoursite.com/2019/08/19/函数防抖和节流/3.gif">
+<meta property="og:updated_time" content="2019-08-19T09:53:53.337Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="练习没满两年半的狒狒">
+<meta name="twitter:title" content="函数防抖和节流">
+<meta name="twitter:description" content="函数防抖(debounce) 概念:在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时。  实现思路如下，将目标方法（动作）包装在setTimeout里面，然后这个方法是一个事件的回调函数，如果这个回调一直执行，那么这些动作就一直不执行。为什么不执行呢，我们搞了一个clearTimeout，这样setTimeout里的方法就不会执行！ 为什么要clearTimeout呢，我们就需要将">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/19/函数防抖和节流/1.gif">
 
 
 
@@ -110,7 +119,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/tags/ES6/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/19/函数防抖和节流/">
 
 
 
@@ -120,7 +129,7 @@
   };
 </script>
 
-  <title>标签: ES6 | 练习没满两年半的狒狒</title>
+  <title>函数防抖和节流 | 练习没满两年半的狒狒</title>
   
 
 
@@ -173,7 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,7 +258,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -337,80 +346,190 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>ES6<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/19/函数防抖和节流/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Herman">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="练习没满两年半的狒狒">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/08/15/ES6中的类与继承/" itemprop="url">
-            
-              <span itemprop="name">ES6中的类与继承</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">函数防抖和节流
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-15T12:02:57+08:00" content="2019-08-15">
-          08-15
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-19 16:24:23 / 修改时间：17:53:53" itemprop="dateCreated datePublished" datetime="2019-08-19T16:24:23+08:00">2019-08-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="函数防抖-debounce"><a href="#函数防抖-debounce" class="headerlink" title="函数防抖(debounce)"></a>函数防抖(debounce)</h2><blockquote>
+<p>概念:在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时。</p>
+</blockquote>
+<p>实现思路如下，将目标方法（动作）包装在setTimeout里面，然后这个方法是一个事件的回调函数，<br>如果这个回调一直执行，那么这些动作就一直不执行。为什么不执行呢，我们搞了一个clearTimeout，<br>这样setTimeout里的方法就不会执行！ 为什么要clearTimeout呢，我们就需要将事件内的连续动作删掉嘛！<br>待到用户不触发这事件了。那么setTimeout就自然会执行这个方法。<br><a id="more"></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模拟一段ajax请求</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">content</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'ajax request '</span> + content)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> inputa = <span class="built_in">document</span>.getElementById(<span class="string">'unDebounce'</span>)</span><br><span class="line"></span><br><span class="line">inputa.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    ajax(e.target.value)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>效果如下：<br><img src="1.gif" alt="image"><br>可以看到，我们只要按下键盘，就会触发这次ajax请求。不仅从资源上来说是很浪费的行为，<br>而且实际应用中，用户也是输出完整的字符后，才会请求。下面我们优化一下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模拟一段ajax请求</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">content</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'ajax request '</span> + content)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fun, delay</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> that = <span class="keyword">this</span></span><br><span class="line">        <span class="keyword">let</span> _args = args</span><br><span class="line">        clearTimeout(fun.id)</span><br><span class="line">        fun.id = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            fun.call(that, _args)</span><br><span class="line">        &#125;, delay)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">let</span> inputb = <span class="built_in">document</span>.getElementById(<span class="string">'debounce'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> debounceAjax = debounce(ajax, <span class="number">500</span>)</span><br><span class="line"></span><br><span class="line">inputb.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        debounceAjax(e.target.value)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>效果：<br><img src="2.gif" alt="image"><br>加入了防抖以后，当你在频繁的输入时，并不会发送请求，只有当你在指定间隔内没有输入时，才会执行函数。<br>如果停止输入但是在指定间隔内又输入，会重新触发计时。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> biu = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'biu biu biu'</span>,<span class="keyword">new</span> <span class="built_in">Date</span>().Format(<span class="string">'HH:mm:ss'</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> boom = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'boom boom boom'</span>,<span class="keyword">new</span> <span class="built_in">Date</span>().Format(<span class="string">'HH:mm:ss'</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">setInterval(debounce(biu,<span class="number">500</span>),<span class="number">1000</span>)</span><br><span class="line">setInterval(debounce(boom,<span class="number">2000</span>),<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="3.gif" alt="image"><br>如果在时间间隔内执行函数，会重新触发计时。biu会在第一次1.5s执行后，每隔1s执行一次，<br>而boom一次也不会执行。因为它的时间间隔是2s，而执行时间是1s，所以每次都会重新触发计时。</p>
+<blockquote>
+<p>防抖就像技能的GCD(公共冷却时间),正在转gcd的时候再次释放了技能就又要重新计时。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://zhuanlan.zhihu.com/p/38313717" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/38313717</a><br><a href="https://juejin.im/post/5b8de829f265da43623c4261" target="_blank" rel="noopener">https://juejin.im/post/5b8de829f265da43623c4261</a></p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/17/判断数据类型/" rel="next" title="几个判断数据类型的函数及其原理">
+                <i class="fa fa-chevron-left"></i> 几个判断数据类型的函数及其原理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -430,8 +549,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -547,6 +675,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数防抖-debounce"><span class="nav-number">1.</span> <span class="nav-text">函数防抖(debounce)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -687,6 +832,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -706,6 +855,8 @@
 
   
 
+
+  
 
 
   
