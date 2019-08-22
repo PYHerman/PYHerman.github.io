@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/21/DOM事件详解/4.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/DOM事件详解/5.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/DOM事件详解/6.png">
-<meta property="og:updated_time" content="2019-08-21T12:17:19.122Z">
+<meta property="og:updated_time" content="2019-08-22T04:58:01.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM事件详解">
 <meta name="twitter:description" content="DOM 事件级别DOM 级别分为四个级别：DOM0 级、DOM1 级、DOM2 级、DOM3 级。">
@@ -411,12 +411,24 @@
                 
               
 
-              <time title="创建时间：2019-08-21 19:30:12 / 修改时间：20:17:19" itemprop="dateCreated datePublished" datetime="2019-08-21T19:30:12+08:00">2019-08-21</time>
+              <time title="创建时间：2019-08-21 19:30:12" itemprop="dateCreated datePublished" datetime="2019-08-21T19:30:12+08:00">2019-08-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-22 12:58:01" itemprop="dateModified" datetime="2019-08-22T12:58:01+08:00">2019-08-22</time>
               
             
           </span>
@@ -489,7 +501,7 @@
 <h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>事件冒泡即事件开始时，由最具体的元素接收（也就是事件发生所在的节点），然后逐级传播到较为不具体的节点。<br>举个栗子，就很容易明白了。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Event Bubbling<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"clickMe"</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>然后，我们给button和它的父元素，加入点击事件。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.getElementById(<span class="string">'clickMe'</span>);</span><br><span class="line"></span><br><span class="line">button.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'1. You click Button'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">document</span>.body.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'2. You click body'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">document</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'3. You click document'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">window</span>.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'4. You click window'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>结果如下图所示：<br><img src="3.png" alt="image"><br>也就是说，click事件首先在<button>元素上发生，然后逐级向上传播。这就是事件冒泡。</button></p>
+<p>结果如下图所示：<br><img src="3.png" alt="image"><br>也就是说，click事件首先在button元素上发生，然后逐级向上传播。这就是事件冒泡。</p>
 <h3 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h3><p>事件捕获的概念，与事件冒泡正好相反。它认为当某个事件发生时，父元素应该更早接收到事件，具体元素则最后接收到事件。比如说刚才的demo，如果是事件捕获的话，事件发生顺序会和上面相反。</p>
 <p>当然，由于时代更迭，事件冒泡方式更胜一筹。所以放心的使用事件冒泡，有特殊需要再使用事件捕获即可。</p>
 <h2 id="addEventlistener在事件流中的运用"><a href="#addEventlistener在事件流中的运用" class="headerlink" title="addEventlistener在事件流中的运用"></a>addEventlistener在事件流中的运用</h2><p>addEventlistener的定义以及参数：<br><img src="4.png" alt="image"></p>
