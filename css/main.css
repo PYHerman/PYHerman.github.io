@@ -1765,7 +1765,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #759111;
+  background: #3c50be;
 }
 .feed-link,
 .chat {
@@ -2958,16 +2958,42 @@ ul.breadcrumb li+li:last-child {
   }
 }
 body {
-  background: url("https://source.unsplash.com/random/1600x900?wallpapers");
+  background: url("https://raw.githubusercontent.com/PYHerman/cloudImage/master/65231299_p0.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
 }
-.main-inner {
-  background: #fff;
-  opacity: 0.8;
+#footer {
+  color: #eee;
+}
+#footer a {
+  color: #eee;
+}
+.post-block {
+  background: rgba(255,255,255,0.9);
 }
 .header-inner {
-  opacity: 0.8;
+  background: rgba(255,255,255,0.91);
+  opacity: 1;
+}
+.footer {
+  font-size: 14px;
+  color: #000;
+}
+.menu .menu-item a:hover,
+.menu-item-active a {
+  background: rgba(255,255,255,0.522);
+  border-bottom-color: rgba(220,209,209,0.588);
+}
+.menu-item-active a:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  right: 15px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #484848;
 }
