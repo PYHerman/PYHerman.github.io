@@ -96,18 +96,22 @@
 
 
 
-  <meta name="description" content="ES6前的类和继承可以参考下这篇文章JavaScript常用八种继承方案，修改原型链的操作真是令人脑阔痛.">
-<meta name="keywords" content="前端,ES6">
+  <meta name="description" content="什么是序列化　　序列化(Serialization)是将对象的状态信息转换为可以存储或传输的形式的过程,通俗点讲就是将对象转为字符串的过程,那么同理,反序列化就是字符串转对象了~">
+<meta name="keywords" content="JS,原理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6中的类与继承">
-<meta property="og:url" content="http://yoursite.com/2019/08/15/ES6中的类与继承/index.html">
+<meta property="og:title" content="序列化和反序列化">
+<meta property="og:url" content="http://yoursite.com/2019/09/11/序列化和反序列化/index.html">
 <meta property="og:site_name" content="练习没满两年半的狒狒">
-<meta property="og:description" content="ES6前的类和继承可以参考下这篇文章JavaScript常用八种继承方案，修改原型链的操作真是令人脑阔痛.">
+<meta property="og:description" content="什么是序列化　　序列化(Serialization)是将对象的状态信息转换为可以存储或传输的形式的过程,通俗点讲就是将对象转为字符串的过程,那么同理,反序列化就是字符串转对象了~">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-19T09:13:54.623Z">
+<meta property="og:image" content="http://images3.10qianwan.com/10qianwan/20180614/b_0_201806142351302987.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/09/11/序列化和反序列化/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/11/序列化和反序列化/2.png">
+<meta property="og:updated_time" content="2019-09-11T13:43:29.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6中的类与继承">
-<meta name="twitter:description" content="ES6前的类和继承可以参考下这篇文章JavaScript常用八种继承方案，修改原型链的操作真是令人脑阔痛.">
+<meta name="twitter:title" content="序列化和反序列化">
+<meta name="twitter:description" content="什么是序列化　　序列化(Serialization)是将对象的状态信息转换为可以存储或传输的形式的过程,通俗点讲就是将对象转为字符串的过程,那么同理,反序列化就是字符串转对象了~">
+<meta name="twitter:image" content="http://images3.10qianwan.com/10qianwan/20180614/b_0_201806142351302987.jpg">
 
 
 
@@ -115,7 +119,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/08/15/ES6中的类与继承/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/11/序列化和反序列化/">
 
 
 
@@ -125,7 +129,7 @@
   };
 </script>
 
-  <title>ES6中的类与继承 | 练习没满两年半的狒狒</title>
+  <title>序列化和反序列化 | 练习没满两年半的狒狒</title>
   
 
 
@@ -362,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/ES6中的类与继承/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/11/序列化和反序列化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Herman">
@@ -379,7 +383,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6中的类与继承
+          <h1 class="post-title" itemprop="name headline">序列化和反序列化
 
               
             
@@ -405,24 +409,12 @@
                 
               
 
-              <time title="创建时间：2019-08-15 12:02:57" itemprop="dateCreated datePublished" datetime="2019-08-15T12:02:57+08:00">2019-08-15</time>
+              <time title="创建时间：2019-09-11 21:13:34 / 修改时间：21:43:29" itemprop="dateCreated datePublished" datetime="2019-09-11T21:13:34+08:00">2019-09-11</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-08-19 17:13:54" itemprop="dateModified" datetime="2019-08-19T17:13:54+08:00">2019-08-19</time>
               
             
           </span>
@@ -456,29 +448,44 @@
       
 
       
-        <p>ES6前的类和继承可以参考下这篇文章<a href="https://juejin.im/post/5bcb2e295188255c55472db0#comment" target="_blank" rel="noopener">JavaScript常用八种继承方案</a>，修改原型链的操作真是令人脑阔痛.<br><a id="more"></a></p>
-<hr>
-<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>传统的ES5   类定义：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = x;</span><br><span class="line">  <span class="keyword">this</span>.y = y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Point.prototype.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Point(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-<p>ES6 中加入了<code>class</code>关键字，使得类的原型写法更加清晰，更像面对对象编程的语法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(x, y) &#123;</span><br><span class="line">    <span class="keyword">this</span>.x = x;</span><br><span class="line">    <span class="keyword">this</span>.y = y;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中的<code>constructor</code>就是类的构造方法，<code>this</code>代表了实例对象，也就是说ES5 的构造函数<code>Point</code>对应了ES6 中的<code>Point</code>类的构造方法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> Point <span class="comment">// "function"</span></span><br><span class="line">Point === Point.prototype.constructor <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>举个例子:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(x, y, color) &#123;</span><br><span class="line">    <span class="keyword">super</span>(x, y); <span class="comment">// 调用父类的constructor(x, y)</span></span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color + <span class="string">' '</span> + <span class="keyword">super</span>.toString(); <span class="comment">// 调用父类的toString()</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><code>super</code>在这里表示父类的构造函数，用来新建父类的<code>this</code>对象。</p>
-<p>子类必须在<code>constructor</code>方法中调用<code>super</code>方法，否则新建实例时会报错。这是因为子类自己的<code>this</code>对象，必须先通过父类的构造函数完成塑造，得到与父类同样的实例属性和方法，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用<code>super</code>方法，子类就得不到<code>this</code>对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Point &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">class ColorPoint extends Point &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let cp = new ColorPoint(); // ReferenceError</span><br></pre></td></tr></table></figure>
-<p>ES5 的继承，实质是先创造子类的实例对象<code>this</code>，然后再将父类的方法添加到<code>this</code>上面（<code>Parent.apply(this)</code>）。ES6 的继承机制完全不同，实质是先将父类实例对象的属性和方法，加到<code>this</code>上面（所以必须先调用<code>super</code>方法），然后再用子类的构造函数修改<code>this</code>。</p>
-<p>如果子类没有定义<code>constructor</code>方法，这个方法会被默认添加，代码如下。也就是说，不管有没有显式定义，任何一个子类都有<code>constructor</code>方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class ColorPoint extends Point &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 等同于</span><br><span class="line">class ColorPoint extends Point &#123;</span><br><span class="line">  constructor(...args) &#123;</span><br><span class="line">    super(...args);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另一个需要注意的地方是，在子类的构造函数中，只有调用super之后，才可以使用this关键字，否则会报错。这是因为子类实例的构建，基于父类实例，只有super方法才能调用父类实例。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Point &#123;</span><br><span class="line">  constructor(x, y) &#123;</span><br><span class="line">    this.x = x;</span><br><span class="line">    this.y = y;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class ColorPoint extends Point &#123;</span><br><span class="line">  constructor(x, y, color) &#123;</span><br><span class="line">    this.color = color; // ReferenceError</span><br><span class="line">    super(x, y);</span><br><span class="line">    this.color = color; // 正确</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面代码中，子类的constructor方法没有调用super之前，就使用this关键字，结果报错，而放在super方法之后就是正确的。</p>
-<p>下面是生成子类实例的代码。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let cp = new ColorPoint(25, 8, &apos;green&apos;);</span><br><span class="line"></span><br><span class="line">cp instanceof ColorPoint // true</span><br><span class="line">cp instanceof Point // true</span><br></pre></td></tr></table></figure>
-<p>上面代码中，实例对象cp同时是ColorPoint和Point两个类的实例，这与 ES5 的行为完全一致。</p>
-<p>最后，父类的静态方法，也会被子类继承。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class A &#123;</span><br><span class="line">  static hello() &#123;</span><br><span class="line">    console.log(&apos;hello world&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class B extends A &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">B.hello()  // hello world</span><br></pre></td></tr></table></figure></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://es6.ruanyifeng.com/#docs/class-extends" target="_blank" rel="noopener">http://es6.ruanyifeng.com/#docs/class-extends</a></p>
+        <p><img src="http://images3.10qianwan.com/10qianwan/20180614/b_0_201806142351302987.jpg" alt="image"></p>
+<h2 id="什么是序列化"><a href="#什么是序列化" class="headerlink" title="什么是序列化"></a>什么是序列化</h2><p>　　序列化(Serialization)是将对象的状态信息转换为可以存储或传输的形式的过程,通俗点讲就是将对象转为字符串的过程,那么同理,反序列化就是字符串转对象了~<br><a id="more"></a></p>
+<h2 id="为什么会有对象序列化"><a href="#为什么会有对象序列化" class="headerlink" title="为什么会有对象序列化"></a>为什么会有对象序列化</h2><p><code>var obj={a:1, b:2}</code>    当这句语句执行后，对象obj的内容会存储在一块内存中，而obj本身存储的只是这块内存的地址的映射而已。简单的说，对象obj就是我们的程序在电脑通电时在内存中维护的一种东西，如果我们程序停止了或者电脑断电了，对象obj将不复存在。</p>
+<p>那么如何把对象obj的内容保存在磁盘上呢（也就是说在没电时继续保留着）？这时就需要把对象obj序列化，也就是说把obj的内容转换成一个字符串的形式，然后再保存在磁盘上。另外，我们又怎么通过HTTP协议把对象obj的内容发送到客户端呢？没错，还是需要先把对象obj序列化，然后客户端根据接收到的字符串再反序列化（也就是将字符串还原为对象）解析出相应的对象。这也正是”百度百科—序列化“中描述的两个作用——存储、传输。</p>
+<h2 id="JS中的对象序列化"><a href="#JS中的对象序列化" class="headerlink" title="JS中的对象序列化"></a>JS中的对象序列化</h2><p>JSON的全称是”JavaScript Object Notation“——JavaScript对象表示法。ECMAScript 5中提供了内置函数<code>JSON.stringify()</code>和<code>JSON.parse()</code>用来序列化和还原JavaScript对象。它们使用起来也很简单：<br><img src="1.png" alt="image"><br><img src="2.png" alt="image"></p>
+<p>可以看到，exampleStr和exampleObj2中并没有 <code>y:undefined</code> 的内容。这说明：JSON的语法是JavaScript语法的子集，它并不能表示JavaScript中的所有值，对于JSON语法不支持的属性，序列化后会将其省略。其详细规则如下：</p>
+<ol>
+<li>对于JavaScript中的五种原始类型，JSON语法支持数字、字符串、布尔值、null四种，不支持undefined；</li>
+<li>NaN、Infinity和-Infinity序列化的结果是null；</li>
+<li>JSON语法不支持函数；</li>
+<li>除了RegExp、Error对象，JSON语法支持其他所有对象；</li>
+<li>日期对象序列化的结果是ISO格式的字符串，但<code>JSON.parse()</code>依然保留它们字符串形态，并不会将其还原为日期对象；</li>
+<li>JSON.stringify()只能序列化对象的可枚举的自有属性；</li>
+</ol>
+<p>从上面的例子也可以看到，在符合以上规则的情况下，还可以通过对象序列化和反序列化完成对象的<a href="待写">深拷贝</a>。</p>
+<h2 id="完整版JSON-stringify"><a href="#完整版JSON-stringify" class="headerlink" title="完整版JSON.stringify()"></a>完整版JSON.stringify()</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h3><p>　　序列化原始值、对象或数组</p>
+<h3 id="2-概要"><a href="#2-概要" class="headerlink" title="2.概要"></a>2.概要</h3><p>　　JSON.stringify(o[, filter][, indent])</p>
+<h3 id="3-参数"><a href="#3-参数" class="headerlink" title="3.参数"></a>3.参数</h3><p>　　o,要转换成JSON字符串的原始值、对象或数组</p>
+<p>　　filter,可选参数，一个数组或函数</p>
+<p>　　indent,可选参数,一个数值或一个字符串</p>
+<h3 id="4-返回"><a href="#4-返回" class="headerlink" title="4.返回"></a>4.返回</h3><p>　　JSON格式的字符串，代表o的值，同时通过了filter的过滤，以及根据indent进行了格式化</p>
+<h3 id="5-描述"><a href="#5-描述" class="headerlink" title="5.描述"></a>5.描述</h3><ol>
+<li><p>当对象o自身带有<code>toJSON()</code>方法时，<code>JSON.stringify()</code>会调用o的<code>toJSON()</code>方法，并使用该方法的返回值而不是该对象本身进行字符串化；</p>
+</li>
+<li><p>如果filter存在且是一个函数，那么该函数的返回值将会作为<code>JSON.stringify()</code>方法的返回值。并且该函数接收两个参数，第一个参数是一个空字符串，第二个参数就是对象o。这里，大家也可以参考<a href="https://github.com/douglascrockford/JSON-js/blob/master/json2.js#L427" target="_blank" rel="noopener">Douglas Crockford为 ES3 环境使用JSON写的json2</a>。看看JSON.stringify和str的实现应该就明白我这里所说的这两个参数的具体含义了；</p>
+</li>
+<li><p><strong>如果filter存在且是一个字符串数组（如果数组中包含数字，数字会自动转化为字符串），那么对象o的某些属性名如果不在这个数组中，则序列化时会将这些属性省略，且返回的字符串中属性的顺序会与该数组中属性的顺序一致；</strong></p>
+</li>
+<li><p><code>JSON.stringify()</code>返回的通常是不带任何空格或换行符的字符串。如果想输出可读性更好的字符串，需要指定第三个参数。如果指定的第三个参数是介于1~10之间的值，则<code>JSON.stringify()</code>会在每一“层级”的输出插入换行符和指定个数的空格。如果指定的第三个参数是非空字符串，则<code>JSON.stringify()</code>会插入换行符和该字符串（<strong>只取前十个字符</strong>）来缩进层级；</p>
+</li>
+</ol>
+<h2 id="完整版JSON-parse"><a href="#完整版JSON-parse" class="headerlink" title="完整版JSON.parse()"></a>完整版JSON.parse()</h2><h3 id="1-简介-1"><a href="#1-简介-1" class="headerlink" title="1.简介"></a>1.简介</h3><p>　　解析JSON格式的字符串</p>
+<h3 id="2-概要-1"><a href="#2-概要-1" class="headerlink" title="2.概要"></a>2.概要</h3><p>　　JSON.parse(s[, reviver])</p>
+<h3 id="3-参数-1"><a href="#3-参数-1" class="headerlink" title="3.参数"></a>3.参数</h3><p>　　s,要解析的字符串</p>
+<p>　　reviver,可选参数，用来转换解析值的可选函数</p>
+<h3 id="4-返回-1"><a href="#4-返回-1" class="headerlink" title="4.返回"></a>4.返回</h3><p>一个对象、数组或原始值。该返回值是从s中解析的（还有可能被reviver修改过）；</p>
+<h3 id="5-描述-1"><a href="#5-描述-1" class="headerlink" title="5.描述"></a>5.描述</h3><p>如果指定了reviver函数，该函数会为从s中解析的每一个原始值（不是包含这些原始值的对象或数组）调用一次。调用reviver时带有两个参数，第一个参数是属性名——对象的属性名或转换成字符串的数组序号，第二个参数是对象属性或数组元素的原始值。并且，reviver函数的返回值将作为<code>JSON.parse()</code>的返回值 (和<code>Array.protorype.map()</code>有点像了)；</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.cnblogs.com/craftsman-gao/p/5130567.html" target="_blank" rel="noopener">https://www.cnblogs.com/craftsman-gao/p/5130567.html</a></p>
 
       
     </div>
@@ -502,9 +509,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
+            <a href="/tags/JS/" rel="tag"># JS</a>
           
-            <a href="/tags/ES6/" rel="tag"># ES6</a>
+            <a href="/tags/原理/" rel="tag"># 原理</a>
           
         </div>
       
@@ -517,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/12/echarts中toolbox的自定义工具/" rel="next" title="echarts中toolbox的自定义工具">
-                <i class="fa fa-chevron-left"></i> echarts中toolbox的自定义工具
+              <a href="/2019/09/08/JS原生实现bind以及apply和call/" rel="next" title="JS原生实现bind以及apply和call">
+                <i class="fa fa-chevron-left"></i> JS原生实现bind以及apply和call
               </a>
             
           </div>
@@ -526,10 +533,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/17/判断数据类型/" rel="prev" title="几个判断数据类型的函数及其原理">
-                几个判断数据类型的函数及其原理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -712,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">1.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是序列化"><span class="nav-number">1.</span> <span class="nav-text">什么是序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么会有对象序列化"><span class="nav-number">2.</span> <span class="nav-text">为什么会有对象序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS中的对象序列化"><span class="nav-number">3.</span> <span class="nav-text">JS中的对象序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整版JSON-stringify"><span class="nav-number">4.</span> <span class="nav-text">完整版JSON.stringify()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-简介"><span class="nav-number">4.1.</span> <span class="nav-text">1.简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-概要"><span class="nav-number">4.2.</span> <span class="nav-text">2.概要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-参数"><span class="nav-number">4.3.</span> <span class="nav-text">3.参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-返回"><span class="nav-number">4.4.</span> <span class="nav-text">4.返回</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-描述"><span class="nav-number">4.5.</span> <span class="nav-text">5.描述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整版JSON-parse"><span class="nav-number">5.</span> <span class="nav-text">完整版JSON.parse()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-简介-1"><span class="nav-number">5.1.</span> <span class="nav-text">1.简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-概要-1"><span class="nav-number">5.2.</span> <span class="nav-text">2.概要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-参数-1"><span class="nav-number">5.3.</span> <span class="nav-text">3.参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-返回-1"><span class="nav-number">5.4.</span> <span class="nav-text">4.返回</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-描述-1"><span class="nav-number">5.5.</span> <span class="nav-text">5.描述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
