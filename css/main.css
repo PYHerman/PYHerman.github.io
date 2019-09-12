@@ -1765,7 +1765,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3c50be;
+  background: #fb66ff;
 }
 .feed-link,
 .chat {
@@ -2971,10 +2971,10 @@ body {
   color: #eee;
 }
 .post-block {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.8);
 }
 .header-inner {
-  background: rgba(255,255,255,0.91);
+  background: rgba(255,255,255,0.8);
   opacity: 1;
 }
 .footer {
@@ -2996,4 +2996,7 @@ body {
   height: 6px;
   border-radius: 50%;
   background-color: #484848;
+}
+.tag-cloud-tags a {
+  color: #555 !important;
 }
